@@ -1,1 +1,45 @@
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.01s
+   0.320665960s  INFO prepare_target{force=false package_id=sql-str-creator v0.0.1 (/home/aran/sql-str-creator) target="sql_test"}: cargo::core::compiler::fingerprint: fingerprint error for sql-str-creator v0.0.1 (/home/aran/sql-str-creator)/Check { test: true }/TargetInner { kind: "test", name: "sql_test", benched: false, ..: with_path("/home/aran/sql-str-creator/tests/sql_test.rs", Edition2024) }
+   0.320717823s  INFO prepare_target{force=false package_id=sql-str-creator v0.0.1 (/home/aran/sql-str-creator) target="sql_test"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/sql-str-creator/target/debug/.fingerprint/sql-str-creator-b9f3a4c249e8d5c1/test-integration-test-sql_test`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  22: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  23: main
+  24: <unknown>
+  25: __libc_start_main
+  26: <unknown>
+    Checking sql-str-creator v0.0.1 (/home/aran/sql-str-creator)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.67s

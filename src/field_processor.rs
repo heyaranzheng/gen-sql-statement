@@ -1,4 +1,6 @@
-use syn::{DeriveInput, Field, Type, Data};
+use syn::{DeriveInput, Field, Data};
+use std::any::Any;
+use std::sync::Arc;
 
 use crate::database_config::get_mapper; 
 use crate::TypeMapper;
@@ -12,9 +14,11 @@ pub struct FieldProcessor {
     //the name of the struct
     struct_ident: String,
     //the name of the primary key field, if we have not set it, it will create a primary key.
-    primary_key: Option<(String, Type)>,    
+    primary_key: (String, String),    
     //ignore the fields that are not used in the table or sql statement
     ignore_fields_name: Vec<String>,
+    //parmeters for the database connection
+    //parms: Vec<Arc<dyn Any + Send + Sync>>,
 }
 
 
@@ -23,17 +27,17 @@ pub struct FieldProcessor {
 #[derive(Clone)]
 pub struct FieldInfo {
     pub name: String,
-    pub ty: Type,
+    pub ty_name: String,
     pub is_primary_key: bool,
     pub is_ignore: bool,
 }
 
 impl FieldInfo {
     // Create a new FieldInfo derectly from Field
-    fn new(name: String, ty: Type, is_primary_key: bool, is_ignore: bool) -> Self {
+    fn new(name: String, ty_name: String, is_primary_key: bool, is_ignore: bool) -> Self {
         Self {
             name,
-            ty,
+            ty_name,
             is_primary_key,
             is_ignore,
         }
@@ -46,11 +50,21 @@ impl FieldProcessor {
     /// # Note: Only struct can be used with this function
     pub fn new(input: &DeriveInput) -> Self {
         let struct_ident = input.ident.to_string();
-        let mut  primary_key: Option<(String, Type)> = None;
+        let mut  primary_key_opt: Option<(String, String)> = None;
         let mut ignore_fields_name: Vec<String> = Vec::new();
+
+        //this used to check if we have already have a field name with id or autoincrement
+        //in the current struct.
+        let mut have_field_name_with_id = false;
+        let mut have_field_name_with_auto_increment = false;
+        
+        //this is the mapper to map the rust type into sql type for your specific database
+        let mapper = get_mapper();
+
+
+        //------------------iter the fields to figure out the primary key field------------
         let fields = match & input.data {
             Data::Struct(s) => {
-                let mut _field_name: String = String::new();
                 let mut is_ignore = false;
                 let mut is_primary_key = false;
                 
@@ -62,8 +76,17 @@ impl FieldProcessor {
                         is_ignore = false;
                         is_primary_key = false;
 
-                        _field_name = f.ident.as_ref().unwrap().to_string();
-                        let field_ty = f.ty.clone();
+                        
+                        let field_name = f.ident.as_ref().unwrap().to_string();
+                
+                        let field_ty_name = mapper.map_type(&f.ty).to_string();
+
+                        //check if the field name is id or autoincrement, record it.
+                        if field_name == "id" {
+                           have_field_name_with_id = true;
+                        }else if field_name == "autoincrement" {
+                            have_field_name_with_auto_increment = true;
+                        }
 
                         //iter the attributes of the field
                         f.attrs.iter().for_each(
@@ -72,13 +95,13 @@ impl FieldProcessor {
                             |a| {
                                 let attr_ident = a.path.get_ident().expect("error in attr of fields in a struct");
                                 if attr_ident == "ignore" {
-                                    ignore_fields_name.push(_field_name.clone());
+                                    ignore_fields_name.push(field_name.clone());
                                     is_ignore = true;
                                 }else if attr_ident == "primary_key" {
                                     //check if we have already set the primary key field, if it is, that's
                                     //an error, store the primary 
-                                    if primary_key.is_none() {
-                                        primary_key = Some((_field_name.clone(), field_ty.clone()));
+                                    if primary_key_opt.is_none() {
+                                        primary_key_opt = Some((field_name.clone(), field_ty_name.clone()));
                                         is_primary_key = true;
                                     }else{
                                         //we can't mark two fields as primary key in the same sql table
@@ -89,7 +112,7 @@ impl FieldProcessor {
                             }
                         );
 
-                        FieldInfo::new(_field_name.clone(), field_ty, is_primary_key, is_ignore)
+                        FieldInfo::new(field_name, field_ty_name, is_primary_key, is_ignore)
                     }
                 
                 //collect the fields info in the struct    
@@ -101,7 +124,36 @@ impl FieldProcessor {
             _=> panic!("Error: only struct can be used to create a table"),
         };
 
-         Self {
+
+        let mut primary_key = (String::new(), String::new());   
+        //check if the user has set the primay key field, if not, we will give a default primary
+        //key, it will be named as id or autoincrement.
+        //If the user has not set the primary key field, and the name of "id" and "autoincrement"
+        //was occupied by other fields, we will panic.
+        if let Some(pk) = primary_key_opt {
+            primary_key = pk;
+        }else{
+            //the user has not set the primary key field, we will give a default primary key
+            if have_field_name_with_id && have_field_name_with_auto_increment {
+                //the name of "id" and "autoincrement" was both occupied by other fields  
+                panic!("you should set your 'id' or 'autoincrement' field as primary key, I 
+                    can't give a default primary key by name of 'id' or 'autoincrement'."
+            );
+            }else if have_field_name_with_id {
+                //id was occupied by other fields
+                primary_key.0 = "autoincrement".to_string();
+            }else{
+                //autoincrement was occupied by other fields
+                primary_key.0 = "id".to_string();
+            }
+        }
+
+        //get a suitable sql type for the primary key field
+        primary_key.1 = crate::database_config::DEFAULT_PRIMARY_KEY_SQL_STR.to_string();
+
+
+
+        Self {
             fields,
             struct_ident,
             primary_key,
@@ -110,18 +162,22 @@ impl FieldProcessor {
         
     }
 
+
     //get all feilds info in the struct
     pub fn get_fields(&self) -> &Vec<FieldInfo> {
         &self.fields
     }
 
-    //get the name of the struct, we will convert it into all lower case
-    pub fn get_struct_ident(&self) -> String{
+    ///get the name of the struct, we will convert it into all lower case
+    /// # Note: 
+    ///  It will return the name of the struct in lower case, it  is a string, not a
+    /// ident type of token stream. It is the table name. 
+    pub fn get_table_name(&self) -> String{
         self.struct_ident.to_lowercase()
     }
 
     //get the name of the primary key field
-    pub fn get_primary_key(&self) -> Option<(String, Type)> {
+    pub fn get_primary_key(&self) -> (String, String) {
         self.primary_key.clone()
     }
 
@@ -129,69 +185,32 @@ impl FieldProcessor {
         &self.ignore_fields_name
     }
 
-    ///This function will return a string of the column list of the table.
-    /// # Note:
-    /// It will filter out the fields that are marked as ignore or primary key,
-    /// BOTH.
-    pub fn get_column_list_without_primary_key(&self) -> Vec<String> {
-        self.fields.iter().filter(|f| 
-            !f.is_ignore && !f.is_primary_key
-        ).map(|f|  f.name.clone() ).collect::<Vec<String>>()
+    /// This function get the list of the column names of the table, attached with its
+    /// type name in SQL.
+    /// # Arguments
+    /// * field_processor: &FieldProcessor, the reference of the FieldProcessor struct that 
+    /// contains all the information of the struct.
+    /// 
+    /// # Return
+    /// * column_list: Vec<(String, String)>, the column name is the first element of the tuple,
+    /// the type name in SQL is the second element of the tuple.
+    /// ```
+    /// //after using this function, the column_list may's data may look like the vector below:
+    /// let list_without_primary_key_may_be = [("id", "INTEGER"), ("name", "TEXT"), ("age", "INTEGER")]
+    /// //if you use a primary_key marked on the id field,
+    /// //the column_list may's data may look like the vector below:
+    /// let column_list_may_be = [("name", "TEXT"), ("age", "INTEGER")]
+    /// ```
+    /// 
+    /// # Note: 
+    /// It will filter out the fields that are marked as ignore or primary key.
+    /// So the primary key will NOT be included in the column list.
+    pub fn get_column_list(&self) -> Vec<(String, String)> 
+    {
+        self.get_fields().iter().filter(|f| !f.is_primary_key && !f.is_ignore)
+            .map(|f| (f.name.clone(), f.ty_name.clone()))
+            .collect::<Vec<(String, String)>>()
     }
-
-    ///This function will return a string of the column list of the table.
-    /// # Note:
-    /// It will filter out the fields that are marked as ignore.
-    /// The primary key field will be remained in this vector.
-    pub fn get_column_list(&self) -> Vec<String> {
-        self.fields.iter().filter(|f| 
-            !f.is_ignore
-        ).map(|f|  f.name.clone() ).collect::<Vec<String>>()
-    }
-
-    ///mapper all the rust type into sql type String, such as  rust type i32 will be mapped
-    /// to string "INTEGER".
-    /// # Note:
-    /// It will filter out the fields that are marked as ignore. 
-    /// The primary key field will be REMAINED in this vector.
-    pub fn get_sql_type_list(&self) -> Vec<String> {
-        //get the mapper to map the rust type
-        let mapper = get_mapper();
-
-        //get all the fields Type struct in the FieldProcessor
-        let vec_field_info = self.get_fields();
-        let ret = vec_field_info.iter()
-            .filter(|f| !f.is_ignore )
-            .map(|f| {
-            mapper.map_type(&f.ty).to_string()
-        }).collect::<Vec<String>>();
- 
-        ret
-    }
-
-    ///mapper all the rust type into sql type String, such as  rust type i32 will be mapped
-    /// to string "INTEGER".
-    /// # Note:
-    /// It will filter out the fields that are marked as ignore. 
-    /// The primary key field will be FILTERED out in this vector.
-
-    pub fn get_sql_type_list_without_primary_key(&self) -> Vec<String> {
-        
-        //get the mapper to map the rust type
-        let mapper = get_mapper();
-
-        //get all the fields Type struct in the FieldProcessor
-        let vec_field_info = self.get_fields();
-        let ret = vec_field_info.iter()
-            .filter(|f| !f.is_ignore )
-            .map(|f| {
-            mapper.map_type(&f.ty).to_string()
-        }).collect::<Vec<String>>();
- 
-        ret
-    
-    }
-
 
 }
 
@@ -199,6 +218,8 @@ impl FieldProcessor {
 
 #[cfg(test)]
 mod tests {
+   
+
     use super::*;
     use syn::parse_quote;
 
@@ -225,16 +246,16 @@ mod tests {
 
         let field_processor = FieldProcessor::new(&input);
         let fields = field_processor.get_fields();
-        let struct_ident = field_processor.get_struct_ident();
+        let table_name = field_processor.get_table_name();
         let primary_key = field_processor.get_primary_key();
         let ignore_fields_name = field_processor.get_ignore_fields_name();
 
         assert_eq!(fields.len(), 3);
 
         //the ident will be converted to lower case
-        assert_eq!(struct_ident, "test_struct");    
+        assert_eq!(table_name, "test_struct");    
 
-        assert_eq!(primary_key.unwrap().0, "id".to_string());
+        assert_eq!(primary_key.0, "id".to_string());
         assert_eq!(ignore_fields_name.len(), 2);
         assert_eq!(ignore_fields_name[0], "name");
         assert_eq!(ignore_fields_name[1], "age");
@@ -242,31 +263,18 @@ mod tests {
     }
 
     #[test]
-    fn test_get_sql_list() {
-        let input = gen_test_token_stream();
-
-        let field_processor = FieldProcessor::new(&input);
-        let sql_type_list = field_processor.get_sql_type_list();
-
-        assert_eq!(sql_type_list.len(), 1);
-        println!("sql_type_list: {:?}", sql_type_list);
-       
-    }
-
-    #[test]
-    fn test_get_column_list_without_primary_key() {
-        let input = gen_test_token_stream();
-        let field_processor = FieldProcessor::new(&input);
-        println!("{:?}", field_processor.get_column_list_without_primary_key());
-        assert_eq!(field_processor.get_column_list_without_primary_key().len(), 1);
-    }
-
-    #[test]
     fn test_get_column_list() {
         let input = gen_test_token_stream();
+
         let field_processor = FieldProcessor::new(&input);
-        println!("{:?}", field_processor.get_column_list());
-        assert_eq!(field_processor.get_column_list().len(), 2);
+        let column_list = field_processor.get_column_list();
+
+        assert_eq!(column_list.len(), 1);
+        assert_eq!(column_list[0].0, "name");
+        assert_eq!(column_list[0].1, "TEXT");
+
     }
+  
+  
 
 }
