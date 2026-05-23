@@ -1,0 +1,1227 @@
+    Blocking waiting for file lock on build directory
+   1.479239994s  INFO prepare_target{force=false package_id=gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement) target="gen_sql_statement"}: cargo::core::compiler::fingerprint: fingerprint error for gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement)/Check { test: false }/TargetInner { name_inferred: true, for_host: true, proc_macro: true, ..: lib_target("gen_sql_statement", ["proc-macro"], "/home/aran/gen-sql-statement/src/lib.rs", Edition2024) }
+   1.479292544s  INFO prepare_target{force=false package_id=gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement) target="gen_sql_statement"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/gen-sql-statement-ef8fcaa40592c714/lib-gen_sql_statement`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  22: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  23: main
+  24: <unknown>
+  25: __libc_start_main
+  26: <unknown>
+   1.517240833s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.106 target="proc_macro2"}: cargo::core::compiler::fingerprint: fingerprint error for proc-macro2 v1.0.106/Check { test: false }/TargetInner { ..: lib_target("proc_macro2", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/proc-macro2-1.0.106/src/lib.rs", Edition2021) }
+   1.517275913s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.106 target="proc_macro2"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/proc-macro2-60f94c55d27f2e8c/lib-proc_macro2`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  23: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  24: main
+  25: <unknown>
+  26: __libc_start_main
+  27: <unknown>
+   1.519153157s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.106 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for proc-macro2 v1.0.106/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/proc-macro2-1.0.106/build.rs", Edition2021) }
+   1.519182996s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.106 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/proc-macro2-0230a8282cb7ca34/run-build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::custom_build::build_work
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  18: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  19: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  20: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  21: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  23: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  24: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  25: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  26: main
+  27: <unknown>
+  28: __libc_start_main
+  29: <unknown>
+   1.519858540s  INFO prepare_target{force=false package_id=unicode-ident v1.0.24 target="unicode_ident"}: cargo::core::compiler::fingerprint: fingerprint error for unicode-ident v1.0.24/Check { test: false }/TargetInner { ..: lib_target("unicode_ident", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-ident-1.0.24/src/lib.rs", Edition2021) }
+   1.519886560s  INFO prepare_target{force=false package_id=unicode-ident v1.0.24 target="unicode_ident"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/unicode-ident-361576af5fb5d365/lib-unicode_ident`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  24: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  25: main
+  26: <unknown>
+  27: __libc_start_main
+  28: <unknown>
+   1.520519695s  INFO prepare_target{force=false package_id=quote v1.0.45 target="quote"}: cargo::core::compiler::fingerprint: fingerprint error for quote v1.0.45/Check { test: false }/TargetInner { ..: lib_target("quote", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-1.0.45/src/lib.rs", Edition2021) }
+   1.520548324s  INFO prepare_target{force=false package_id=quote v1.0.45 target="quote"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/quote-15ec20a9efe89eab/lib-quote`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  23: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  24: main
+  25: <unknown>
+  26: __libc_start_main
+  27: <unknown>
+   1.522439338s  INFO prepare_target{force=false package_id=quote v1.0.45 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for quote v1.0.45/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-1.0.45/build.rs", Edition2021) }
+   1.522466278s  INFO prepare_target{force=false package_id=quote v1.0.45 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/quote-b6217537a46a07d1/run-build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::custom_build::build_work
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  18: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  19: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  20: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  21: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  23: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  24: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  25: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  26: main
+  27: <unknown>
+  28: __libc_start_main
+  29: <unknown>
+   1.523180641s  INFO prepare_target{force=false package_id=rusqlite v0.39.0 target="rusqlite"}: cargo::core::compiler::fingerprint: fingerprint error for rusqlite v0.39.0/Check { test: false }/TargetInner { ..: lib_target("rusqlite", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rusqlite-0.39.0/src/lib.rs", Edition2021) }
+   1.523209451s  INFO prepare_target{force=false package_id=rusqlite v0.39.0 target="rusqlite"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/rusqlite-507b92546e21c994/lib-rusqlite`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  23: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  24: main
+  25: <unknown>
+  26: __libc_start_main
+  27: <unknown>
+   1.523930765s  INFO prepare_target{force=false package_id=bitflags v2.11.1 target="bitflags"}: cargo::core::compiler::fingerprint: fingerprint error for bitflags v2.11.1/Check { test: false }/TargetInner { ..: lib_target("bitflags", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bitflags-2.11.1/src/lib.rs", Edition2021) }
+   1.523964064s  INFO prepare_target{force=false package_id=bitflags v2.11.1 target="bitflags"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/bitflags-99b552cdd0e23a08/lib-bitflags`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  24: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  25: main
+  26: <unknown>
+  27: __libc_start_main
+  28: <unknown>
+   1.524635069s  INFO prepare_target{force=false package_id=fallible-iterator v0.3.0 target="fallible_iterator"}: cargo::core::compiler::fingerprint: fingerprint error for fallible-iterator v0.3.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("fallible_iterator", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fallible-iterator-0.3.0/src/lib.rs", Edition2018) }
+   1.524663408s  INFO prepare_target{force=false package_id=fallible-iterator v0.3.0 target="fallible_iterator"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/fallible-iterator-cb0ae4a04508e6b9/lib-fallible_iterator`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  24: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  25: main
+  26: <unknown>
+  27: __libc_start_main
+  28: <unknown>
+   1.525333602s  INFO prepare_target{force=false package_id=fallible-streaming-iterator v0.1.9 target="fallible_streaming_iterator"}: cargo::core::compiler::fingerprint: fingerprint error for fallible-streaming-iterator v0.1.9/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("fallible_streaming_iterator", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/fallible-streaming-iterator-0.1.9/src/lib.rs", Edition2015) }
+   1.525370202s  INFO prepare_target{force=false package_id=fallible-streaming-iterator v0.1.9 target="fallible_streaming_iterator"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/fallible-streaming-iterator-2fac56b9c227f0ea/lib-fallible_streaming_iterator`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  24: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  25: main
+  26: <unknown>
+  27: __libc_start_main
+  28: <unknown>
+   1.526030706s  INFO prepare_target{force=false package_id=hashlink v0.11.0 target="hashlink"}: cargo::core::compiler::fingerprint: fingerprint error for hashlink v0.11.0/Check { test: false }/TargetInner { ..: lib_target("hashlink", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hashlink-0.11.0/src/lib.rs", Edition2018) }
+   1.526057996s  INFO prepare_target{force=false package_id=hashlink v0.11.0 target="hashlink"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/hashlink-c12cd0bf8db914d4/lib-hashlink`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  24: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  25: main
+  26: <unknown>
+  27: __libc_start_main
+  28: <unknown>
+   1.526770810s  INFO prepare_target{force=false package_id=hashbrown v0.16.1 target="hashbrown"}: cargo::core::compiler::fingerprint: fingerprint error for hashbrown v0.16.1/Check { test: false }/TargetInner { ..: lib_target("hashbrown", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hashbrown-0.16.1/src/lib.rs", Edition2021) }
+   1.526799570s  INFO prepare_target{force=false package_id=hashbrown v0.16.1 target="hashbrown"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/hashbrown-202b3154fa0be878/lib-hashbrown`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  18: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  19: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  20: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  21: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  23: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  24: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  25: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  26: main
+  27: <unknown>
+  28: __libc_start_main
+  29: <unknown>
+   1.527495734s  INFO prepare_target{force=false package_id=foldhash v0.2.0 target="foldhash"}: cargo::core::compiler::fingerprint: fingerprint error for foldhash v0.2.0/Check { test: false }/TargetInner { benched: false, ..: lib_target("foldhash", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/foldhash-0.2.0/src/lib.rs", Edition2021) }
+   1.527524153s  INFO prepare_target{force=false package_id=foldhash v0.2.0 target="foldhash"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/foldhash-f83a8e2fbd1ec026/lib-foldhash`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  22: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  23: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  24: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  25: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  26: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  27: main
+  28: <unknown>
+  29: __libc_start_main
+  30: <unknown>
+   1.528192787s  INFO prepare_target{force=false package_id=libsqlite3-sys v0.37.0 target="libsqlite3_sys"}: cargo::core::compiler::fingerprint: fingerprint error for libsqlite3-sys v0.37.0/Check { test: false }/TargetInner { ..: lib_target("libsqlite3_sys", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libsqlite3-sys-0.37.0/src/lib.rs", Edition2021) }
+   1.528220867s  INFO prepare_target{force=false package_id=libsqlite3-sys v0.37.0 target="libsqlite3_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/libsqlite3-sys-690679cc851a93a4/lib-libsqlite3_sys`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  24: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  25: main
+  26: <unknown>
+  27: __libc_start_main
+  28: <unknown>
+   1.530019531s  INFO prepare_target{force=false package_id=libsqlite3-sys v0.37.0 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for libsqlite3-sys v0.37.0/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libsqlite3-sys-0.37.0/build.rs", Edition2021) }
+   1.530047651s  INFO prepare_target{force=false package_id=libsqlite3-sys v0.37.0 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/libsqlite3-sys-407d8c09a53ad449/run-build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::custom_build::build_work
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  22: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  23: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  24: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  25: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  26: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  27: main
+  28: <unknown>
+  29: __libc_start_main
+  30: <unknown>
+   1.530789215s  INFO prepare_target{force=false package_id=smallvec v1.15.1 target="smallvec"}: cargo::core::compiler::fingerprint: fingerprint error for smallvec v1.15.1/Check { test: false }/TargetInner { ..: lib_target("smallvec", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/smallvec-1.15.1/src/lib.rs", Edition2018) }
+   1.530817884s  INFO prepare_target{force=false package_id=smallvec v1.15.1 target="smallvec"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/smallvec-c326a5f51f7d7304/lib-smallvec`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  24: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  25: main
+  26: <unknown>
+  27: __libc_start_main
+  28: <unknown>
+   1.531449679s  INFO prepare_target{force=false package_id=syn v1.0.109 target="syn"}: cargo::core::compiler::fingerprint: fingerprint error for syn v1.0.109/Check { test: false }/TargetInner { name_inferred: true, doc_scrape_examples: Disabled, ..: lib_target("syn", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs", Edition2018) }
+   1.531477959s  INFO prepare_target{force=false package_id=syn v1.0.109 target="syn"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/syn-3d6b821e5a8bfdf6/lib-syn`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  23: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  24: main
+  25: <unknown>
+  26: __libc_start_main
+  27: <unknown>
+   1.533747929s  INFO prepare_target{force=false package_id=syn v1.0.109 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for syn v1.0.109/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/build.rs", Edition2018) }
+   1.533775289s  INFO prepare_target{force=false package_id=syn v1.0.109 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/syn-c59a7afe5cc3aa23/run-build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::custom_build::build_work
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  18: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  19: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  20: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  21: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  23: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  24: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  25: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  26: main
+  27: <unknown>
+  28: __libc_start_main
+  29: <unknown>
+   1.534478422s  INFO prepare_target{force=false package_id=gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement) target="gen_sql_statement"}: cargo::core::compiler::fingerprint: fingerprint error for gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement)/Check { test: true }/TargetInner { name_inferred: true, for_host: true, proc_macro: true, ..: lib_target("gen_sql_statement", ["proc-macro"], "/home/aran/gen-sql-statement/src/lib.rs", Edition2024) }
+   1.534507262s  INFO prepare_target{force=false package_id=gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement) target="gen_sql_statement"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/gen-sql-statement-e6a99e641b914292/test-lib-gen_sql_statement`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  22: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  23: main
+  24: <unknown>
+  25: __libc_start_main
+  26: <unknown>
+   1.535778061s  INFO prepare_target{force=false package_id=gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement) target="sql_test"}: cargo::core::compiler::fingerprint: fingerprint error for gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement)/Check { test: true }/TargetInner { kind: "test", name: "sql_test", benched: false, ..: with_path("/home/aran/gen-sql-statement/tests/sql_test.rs", Edition2024) }
+   1.535808081s  INFO prepare_target{force=false package_id=gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement) target="sql_test"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/gen-sql-statement-5895449cba084113/test-integration-test-sql_test`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  22: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  23: main
+  24: <unknown>
+  25: __libc_start_main
+  26: <unknown>
+   1.537097660s  INFO prepare_target{force=false package_id=gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement) target="gen_sql_statement"}: cargo::core::compiler::fingerprint: fingerprint error for gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement)/Build/TargetInner { name_inferred: true, for_host: true, proc_macro: true, ..: lib_target("gen_sql_statement", ["proc-macro"], "/home/aran/gen-sql-statement/src/lib.rs", Edition2024) }
+   1.537126209s  INFO prepare_target{force=false package_id=gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement) target="gen_sql_statement"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/gen-sql-statement-7c4b19a5ac83d721/lib-gen_sql_statement`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  23: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  24: main
+  25: <unknown>
+  26: __libc_start_main
+  27: <unknown>
+   1.538219238s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.106 target="proc_macro2"}: cargo::core::compiler::fingerprint: fingerprint error for proc-macro2 v1.0.106/Build/TargetInner { ..: lib_target("proc_macro2", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/proc-macro2-1.0.106/src/lib.rs", Edition2021) }
+   1.538249028s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.106 target="proc_macro2"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/proc-macro2-1504d90df3c14d6e/lib-proc_macro2`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  24: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  25: main
+  26: <unknown>
+  27: __libc_start_main
+  28: <unknown>
+   1.539019181s  INFO prepare_target{force=false package_id=quote v1.0.45 target="quote"}: cargo::core::compiler::fingerprint: fingerprint error for quote v1.0.45/Build/TargetInner { ..: lib_target("quote", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-1.0.45/src/lib.rs", Edition2021) }
+   1.539049071s  INFO prepare_target{force=false package_id=quote v1.0.45 target="quote"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/quote-1c7f96dcdc9e7c82/lib-quote`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  24: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  25: main
+  26: <unknown>
+  27: __libc_start_main
+  28: <unknown>
+   1.539793134s  INFO prepare_target{force=false package_id=rusqlite v0.39.0 target="rusqlite"}: cargo::core::compiler::fingerprint: fingerprint error for rusqlite v0.39.0/Build/TargetInner { ..: lib_target("rusqlite", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rusqlite-0.39.0/src/lib.rs", Edition2021) }
+   1.539822704s  INFO prepare_target{force=false package_id=rusqlite v0.39.0 target="rusqlite"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/rusqlite-d9f39fa8e5622a45/lib-rusqlite`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  24: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  25: main
+  26: <unknown>
+  27: __libc_start_main
+  28: <unknown>
+   1.540706816s  INFO prepare_target{force=false package_id=libsqlite3-sys v0.37.0 target="libsqlite3_sys"}: cargo::core::compiler::fingerprint: fingerprint error for libsqlite3-sys v0.37.0/Build/TargetInner { ..: lib_target("libsqlite3_sys", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libsqlite3-sys-0.37.0/src/lib.rs", Edition2021) }
+   1.540735906s  INFO prepare_target{force=false package_id=libsqlite3-sys v0.37.0 target="libsqlite3_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/libsqlite3-sys-25a6137fab6f9c05/lib-libsqlite3_sys`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  18: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  19: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  20: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  21: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  23: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  24: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  25: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  26: main
+  27: <unknown>
+  28: __libc_start_main
+  29: <unknown>
+   1.541437050s  INFO prepare_target{force=false package_id=syn v1.0.109 target="syn"}: cargo::core::compiler::fingerprint: fingerprint error for syn v1.0.109/Build/TargetInner { name_inferred: true, doc_scrape_examples: Disabled, ..: lib_target("syn", ["lib"], "/home/aran/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-1.0.109/src/lib.rs", Edition2018) }
+   1.541465600s  INFO prepare_target{force=false package_id=syn v1.0.109 target="syn"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/syn-15ccd415d0f075eb/lib-syn`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  24: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  25: main
+  26: <unknown>
+  27: __libc_start_main
+  28: <unknown>
+   1.542225323s  INFO prepare_target{force=false package_id=gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement) target="test_macros"}: cargo::core::compiler::fingerprint: fingerprint error for gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement)/Check { test: true }/TargetInner { kind: "test", name: "test_macros", benched: false, ..: with_path("/home/aran/gen-sql-statement/tests/test_macros.rs", Edition2024) }
+   1.542253043s  INFO prepare_target{force=false package_id=gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement) target="test_macros"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/aran/gen-sql-statement/target/debug/.fingerprint/gen-sql-statement-aeb7d0b623b8b29d/test-integration-test-test_macros`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/core/src/ops/function.rs:290:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/panic.rs:357:14
+  22: std::rt::lang_start_internal
+             at /rustc/c8ca44c98eade864824a3c0a15fbdc1edb7f9dd4/library/std/src/rt.rs:171:5
+  23: main
+  24: <unknown>
+  25: __libc_start_main
+  26: <unknown>
+   Compiling proc-macro2 v1.0.106
+    Checking foldhash v0.2.0
+    Checking unicode-ident v1.0.24
+    Checking fallible-streaming-iterator v0.1.9
+    Checking bitflags v2.11.1
+    Checking smallvec v1.15.1
+   Compiling quote v1.0.45
+   Compiling syn v1.0.109
+    Checking fallible-iterator v0.3.0
+   Compiling libsqlite3-sys v0.37.0
+    Checking hashbrown v0.16.1
+   Compiling rusqlite v0.39.0
+    Checking hashlink v0.11.0
+    Checking gen-sql-statement v0.0.1 (/home/aran/gen-sql-statement)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 4.19s
