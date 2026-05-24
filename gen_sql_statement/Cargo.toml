@@ -9,7 +9,6 @@ keywords = ["sql","statement", "proc-macro", "database"]
 description = "A simple macro to generate a specific SQL statement when we have a structure. Support SQLite first"
 
 [dependencies]
-gen_sql_statement_trait = {version = "0.0.1", path = "../gen_sql_statement_trait"}
-gen_sql_statement_derive = {version = "0.0.1", path = "../gen_sql_statement_derive"}
-
+sql_statement_trait = {version = "0.0.1", path = "../sql_statement_trait"}
+sql_statement_derive = {version = "0.0.1", path = "../sql_statement_derive"}
 
