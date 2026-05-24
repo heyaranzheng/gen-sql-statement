@@ -1,27 +1,4 @@
-[package]
-name = "gen-sql-statement"
-version = "0.0.1"
-authors = ["Aran Z <heyaranzheng@hotmail.com>"]
-edition = "2024"
-license = "MIT"  
-repository = "https://github.com/heyaranzheng/gen-sql-statement"
-keywords = ["sql","statement", "proc-macro", "database"]
-description = "A simple macro to generate a specific SQL statement when we have a structure. Support SQLite first"
+[workspace]
+members = ["gen-sql-statement", "gen-sql-statement-trait", "gen-sql-statement-derive"]
+resolver = "3"
 
-[lib]
-proc-macro = true
-
-[dependencies]
-syn = { version = "1.0", features = ["full"] }
-quote = "1.0"
-proc-macro2 = "1.0"
-rusqlite = "0.39.0"
-
-
-
-[features]
-default = ["only-for-sqlite"]
-#default = ["only-for-postgres"]
-
-only-for-postgres = []
-only-for-sqlite = []

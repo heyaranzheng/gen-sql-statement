@@ -1,0 +1,8 @@
+[package]
+name = "gen-sql-statement-trait"
+version = "0.0.1"
+edition = "2024"
+description = "traits for generating SQL statements, it's a trait interface for gen-sql-statement"
+license = "MIT"
+
+[dependencies]

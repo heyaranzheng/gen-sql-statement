@@ -47,7 +47,7 @@ use gen_sql_str::{
 
 
 /// The entry funtion of derive macro
-#[proc_macro_derive(SqlStatement, attributes(primary_key, ignore))]
+#[proc_macro_derive(SqlStatementTrait, attributes(primary_key, ignore))]
 pub fn derive_create_table(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     //get the token stream, and parse it into a DeriveInput struct.
     let input = parse_macro_input!(input as DeriveInput);
@@ -74,8 +74,10 @@ pub fn derive_create_table(input: proc_macro::TokenStream) -> proc_macro::TokenS
 
     //generate the code to implement the CreateTable trait
     let expand = quote!{
+        use gen-sql-statement-trait::SqlStatementTrait;
+
         
-        impl #impl_generics #struct_ident #ty_generics #where_clausre {
+        impl #impl_generics SqlStatementTrait for #struct_ident #ty_generics #where_clausre {
             /// Return the sql string of the create table statement
             pub fn create_table_sql(&self) -> &'static str {
                 #sql_str
