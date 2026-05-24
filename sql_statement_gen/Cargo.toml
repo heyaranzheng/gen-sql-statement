@@ -1,6 +1,6 @@
 [package]
 name = "sql_statement_gen"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Aran Z <heyaranzheng@hotmail.com>"]
 edition = "2024"
 license = "MIT"  
