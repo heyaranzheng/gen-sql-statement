@@ -1,0 +1,23 @@
+[package]
+name = "sql_statement_derive"
+version = "0.0.1"
+edition = "2024"
+description = "derive macro for generating SQL statements, add crate 'sql_statement' instead"
+license = "MIT"
+repository = "https://github.com/heyaranzheng/gen-sql-statement"
+
+[lib]
+proc-macro = true
+
+
+[dependencies]
+sql_statement_trait = {version = "0.0.1", path = "../sql_statement_trait" }
+quote = "1.0"
+proc-macro2 = "1.0"
+rusqlite = "0.39.0"
+syn = "1.0.86"
+
+[features]
+default = ["only-for-sqlite"]
+only-for-sqlite = []
+only-for-postgresql = []
