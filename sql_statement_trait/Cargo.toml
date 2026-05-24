@@ -1,6 +1,6 @@
 [package]
 name = "sql_statement_trait"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2024"
 description = "traits for generating SQL statements, it's a trait interface for gen-sql-statement"
 license = "MIT OR Apache-2.0"
